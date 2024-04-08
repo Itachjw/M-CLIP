@@ -17,11 +17,17 @@ We use single RTX4090 24G GPU for training and evaluation.
 Requirements
 
 pytorch 1.9.0
+
 torchvision 0.10.0
+
 prettytable
+
 easydict
+
 Prepare Datasets
+
 Download the CUHK-PEDES dataset, ICFG-PEDES dataset, RSTPReid dataset.
+
 Replace the json file.
 
 Training and testing are the same as IRRA(https://github.com/anosorae/IRRA).
