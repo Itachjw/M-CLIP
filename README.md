@@ -12,5 +12,38 @@ The images of three datasets can be download from the official code.
 Compact_Matching:   compact cross-modal matching loss
 hard_loss: cross view hard pair maining loss, there is an example with 3 view.
 
+Requirements
+we use single RTX4090 24G GPU for training and evaluation.
+
+pytorch 1.9.0
+torchvision 0.10.0
+prettytable
+easydict
+Prepare Datasets
+Download the CUHK-PEDES dataset, ICFG-PEDES dataset, RSTPReid dataset.
+Replace the json file.
+
+Training and testing are the same as IRRA(https://github.com/anosorae/IRRA).
+
+Organize them in your dataset root dir folder as follows:
+
+|-- your dataset root dir/
+|   |-- <CUHK-PEDES>/
+|       |-- imgs
+|            |-- cam_a
+|            |-- cam_b
+|            |-- ...
+|       |-- reid_raw.json
+|
+|   |-- <ICFG-PEDES>/
+|       |-- imgs
+|            |-- test
+|            |-- train 
+|       |-- ICFG_PEDES.json
+|
+|   |-- <RSTPReid>/
+|       |-- imgs
+|       |-- data_captions.json
+
 This project is based on IRRA(https://github.com/anosorae/IRRA).
 Thanks of Jiang and Ye(IRRA).
