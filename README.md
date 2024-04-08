@@ -25,25 +25,5 @@ Replace the json file.
 
 Training and testing are the same as IRRA(https://github.com/anosorae/IRRA).
 
-Organize them in your dataset root dir folder as follows:
-
-|-- your dataset root dir/
-|   |-- <CUHK-PEDES>/
-|       |-- imgs
-|            |-- cam_a
-|            |-- cam_b
-|            |-- ...
-|       |-- reid_raw.json
-|
-|   |-- <ICFG-PEDES>/
-|       |-- imgs
-|            |-- test
-|            |-- train 
-|       |-- ICFG_PEDES.json
-|
-|   |-- <RSTPReid>/
-|       |-- imgs
-|       |-- data_captions.json
-
 This project is based on IRRA(https://github.com/anosorae/IRRA).
 Thanks of Jiang and Ye(IRRA).
