@@ -12,9 +12,9 @@ The images of three datasets can be download from the official code.
 
 Compact_Matching:   compact cross-modal matching loss
 hard_loss: cross view hard pair maining loss, there is an example with 3 view.
+We use single RTX4090 24G GPU for training and evaluation.
 
 Requirements
-we use single RTX4090 24G GPU for training and evaluation.
 
 pytorch 1.9.0
 torchvision 0.10.0
