@@ -1,7 +1,7 @@
 # M-CLIP
 Few-shot Text-based Person Search
 
-# few-shot-text-to-image-person-retrieval
+# few-shot-text-based person search
 The data and losses of M-CLIP: Multi-view Contrastive Learning for Few-Shot Text-to-Image Person Retrieval
 
 -------data folder:
