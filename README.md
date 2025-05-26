@@ -1,36 +1,55 @@
-# M-CLIP
-Few-shot Text-based Person Search
 
-The data and losses of M-CLIP: Multi-view Contrastive Learning for Few-Shot Text-based Person Search
+# **M-CLIP: Multi-view Contrastive Learning for One-Shot Text-to-Image Person Re-identification** (submited to IEEE TIP)
 
--------data folder:
+## Highlights
 
-There are the json files of three datasets for one-shot setting.
-The images of three datasets can be download from the official code.
+Unlike previous work, we focus on a challenging and practically important semi-supervised task called **One-Shot Text-to-Image Person Re-identification** (one-shot TIReID), a potential solution that reduces labeling efforts by using only one labeled image-text pair per identity along with a pool of unlabeled person images.
 
--------loss.py
+![](one-shot.pdf)
+![](m-clip.pdf)
 
-Compact_Matching:   compact cross-modal matching loss
-hard_loss: cross view hard pair maining loss, there is an example with 3 view.
-We use single RTX4090 24G GPU for training and evaluation.
+## Usage
 
-Requirements
+### Prepare Datasets
+Download the CUHK-PEDES dataset from [here](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description), ICFG-PEDES dataset from [here](https://github.com/zifyloo/SSAN) and RSTPReid dataset form [here](https://github.com/NjtechCVLab/RSTPReid-Dataset)
 
-pytorch 1.9.0
+Organize them in `your dataset root dir` folder as follows:
+```
+|-- your dataset root dir/
+|   |-- <CUHK-PEDES>/
+|       |-- imgs
+|            |-- cam_a
+|            |-- cam_b
+|            |-- ...
+|       |-- reid_raw.json
+|
+|   |-- <ICFG-PEDES>/
+|       |-- imgs
+|            |-- test
+|            |-- train 
+|       |-- ICFG_PEDES.json
+|
+|   |-- <RSTPReid>/
+|       |-- imgs
+|       |-- data_captions.json
+```
 
-torchvision 0.10.0
+## Training
 
-prettytable
+```python
+CUDA_VISIBLE_DEVICES=0 \
+python train.py \
+--name iira \
+--img_aug \
+--batch_size 64 \
+--MLM \
+--dataset_name $DATASET_NAME \
+--loss_names 'sdm+mlm+id' \
+--num_epoch 60
+```
 
-easydict
+## Testing
 
-Prepare Datasets
-
-Download the CUHK-PEDES dataset, ICFG-PEDES dataset, RSTPReid dataset.
-
-Replace the json file.
-
-Training and testing are the same as IRRA(https://github.com/anosorae/IRRA).
-
-This project is based on IRRA(https://github.com/anosorae/IRRA).
-Thanks of Jiang and Ye(IRRA).
+```python
+python test.py --config_file 'path/to/model_dir/configs.yaml'
+```
