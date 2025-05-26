@@ -5,6 +5,9 @@
 
 Unlike previous work, we focus on a challenging and practically important semi-supervised task called **One-Shot Text-to-Image Person Re-identification** (one-shot TIReID), a potential solution that reduces labeling efforts by using only one labeled image-text pair per identity along with a pool of unlabeled person images.
 
+![](image/one-shot.png)
+
+![](image/m-clip.png)
 
 ## Usage
 
