@@ -1,5 +1,5 @@
 
-# **M-CLIP: Multi-view Contrastive Learning for One-Shot Text-to-Image Person Re-identification** (submited to IEEE TIP)
+# **P-CLIP: Progressive Discrepancy Learning for One-Shot Text-to-Image Person Re-identification** (submited to IEEE TIP)
 
 ## Highlights
 
